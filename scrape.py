@@ -22,7 +22,7 @@ def collect_data(r):
         part="snippet,contentDetails,statistics,localizations,topicDetails",
         chart="mostPopular",
         regionCode=r["country"],
-        maxResults=5,
+        maxResults=50,
         hl="ta"
 
     )
