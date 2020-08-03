@@ -38,7 +38,7 @@ for i, r in regionid_data.iterrows():
     try:
 
         country_trends_df = collect_data(r)
-        country_trends_df["country_orgin"] = r["country"]
+        country_trends_df["country_origin"] = r["country"]
         total_trends = total_trends.append(
             country_trends_df, ignore_index=True)
 
