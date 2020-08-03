@@ -4,7 +4,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron:  '0 0 * * *' # Every hour. Ref https://crontab.guru/examples.html
+    - cron:  '0 18 * * *' # Every hour. Ref https://crontab.guru/examples.html
 
 
 
