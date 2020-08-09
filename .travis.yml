@@ -1,0 +1,41 @@
+language: python
+matrix:
+  include:
+    # we don't actually use this, just ensuring that Travis builds correctly.
+    - python: 3.6
+      env: PYTHON_VERSION=3.8
+
+install:
+  # We do this conditionally because it saves us some downloading if the
+  # version is the same.
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda config --add channels conda-forge
+
+  # Useful for debugging any issues with conda
+  - conda info -a
+  - conda install -c conda-forge mamba
+
+  # Install everything
+  - source $HOME/miniconda/etc/profile.d/conda.sh
+  - mamba env create -f environment.yml || conda env create -f environment.yml
+  - conda activate daily_youtube_trends
+  - npm install -g reveal-md
+
+
+script:
+  # Build script goes here
+  - which reveal-md
+  - reveal-md slides.md --static
+
+deploy:
+  provider: pages:git
+  token: $GITHUB_TOKEN
+  edge: true # opt in to dpl v2
+  target_branch: gh-pages
+  keep_history: false
+  local_dir: _static
