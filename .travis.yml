@@ -30,7 +30,7 @@ install:
 script:
   # Build script goes here
   - which reveal-md
-  - reveal-md slides.md --static
+  - reveal-md slides.md --static --static-dirs=charts
 
 deploy:
   provider: pages:git

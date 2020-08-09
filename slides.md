@@ -10,7 +10,7 @@
 </style>
 
 <div class="p_iframe">
-<iframe frameborder="0" seamless='seamless' scrolling=no src="charts/Views.html"></iframe>
+<iframe frameborder="0" seamless='seamless' scrolling=no src="./charts/Views.html"></iframe>
 </div>
 
 ---
@@ -23,7 +23,7 @@
 </style>
 
 <div class="p_iframe">
-<iframe frameborder="0" seamless='seamless' scrolling=no src="charts/Count.html"></iframe>
+<iframe frameborder="0" seamless='seamless' scrolling=no src="./charts/Count.html"></iframe>
 </div>
 
 
