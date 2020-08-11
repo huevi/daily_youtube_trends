@@ -16,7 +16,7 @@ data=pd.read_csv(latest_file)
 data_columns=["id",'snippet.publishedAt','snippet.title','snippet.channelTitle','contentDetails.duration',\
 'statistics.viewCount','statistics.likeCount','statistics.dislikeCount','statistics.favoriteCount',\
 'statistics.commentCount',"snippet.channelId","snippet.categoryId",'country_origin', 'topicDetails.relevantTopicIds',\
-'topicDetails.topicCategories', 'snippet.defaultLanguage','snippet.defaultAudioLanguage','localizations.ta.title','localizations.ml.title']
+'topicDetails.topicCategories', 'snippet.defaultLanguage','snippet.defaultAudioLanguage']
 
 
 videoCat_df=pd.read_json("./info/videoCategories.json")
